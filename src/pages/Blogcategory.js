@@ -6,7 +6,6 @@ const Catogories = () => {
   const category = data.blogs.filter(
     (blog) => blog.category.toLowerCase() === cat.toLowerCase()
   );
-  console.log(category);
   return (
     <>
       <Latestpost blogs={category} title={cat} />
