@@ -1,5 +1,4 @@
 import styles from "../styles/latestpost.module.css";
-import author from "../images/author.png";
 import { Link } from "react-router-dom";
 
 const Latestpost = ({ blogs: data, title }) => {

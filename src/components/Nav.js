@@ -1,10 +1,9 @@
 import styles from "../styles/navbar.module.css";
 import brandimg from "../images/Logo (2).svg";
 import searchIcon from "../images/search.svg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import data from "../data/blogs.json";
-import Latestpost from "./Latestpost";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
@@ -15,6 +14,7 @@ const Navbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const searchValue = search.toLowerCase();
     const result = data.blogs.filter(
       (blog) =>
@@ -33,9 +33,9 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light shadow-sm mb-5">
         <div className="container px-5 ">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to={"/"}>
             <img src={brandimg} alt="" />
-          </a>
+          </Link>
           <button
             className={`navbar-toggler ${styles.nav_toggler}`}
             type="button"

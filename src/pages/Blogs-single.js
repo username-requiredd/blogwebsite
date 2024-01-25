@@ -1,5 +1,4 @@
 import styles from "../styles/blogsingle.module.css";
-import Latestpost from "../components/Latestpost";
 import { Link, useParams } from "react-router-dom";
 import data from "../data/blogs.json";
 import ReactMarkdown from "react-markdown";

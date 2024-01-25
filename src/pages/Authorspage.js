@@ -1,14 +1,12 @@
 import styles from "../styles/authors.module.css";
-import author from "../images/author.png";
 import Latestpost from "../components/Latestpost";
-import facebook from "../images/logo-facebook (2).svg";
 import data from "../data/blogs.json";
 import { useParams } from "react-router-dom";
 
 const Authorspage = () => {
   const { id } = useParams();
   const { author, authorimg } = data.blogs[id];
-  const authorsBlog = data.blogs.filter((blog) => blog.author == author);
+  const authorsBlog = data.blogs.filter((blog) => blog.author === author);
   // console.log(authorsBlog);
   const bio = [
     {
@@ -29,7 +27,6 @@ const Authorspage = () => {
   ];
   const abt = bio.filter((auth) => auth.name === author);
   const authorBio = abt[0].about;
-  console.log(abt, author, abt[0].about);
   return (
     <>
       <div className="container mt-4 mb-5">
