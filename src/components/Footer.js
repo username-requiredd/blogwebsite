@@ -41,15 +41,6 @@ const Footer = () => {
                       Blogs
                     </Link>
                   </li>
-                  {/* <li>
-                    <a href="#">Archive</a>
-                  </li>
-                  <li>
-                    <a href="#">Author</a>
-                  </li>
-                  <li>
-                    <a href="#">blogs</a>
-                  </li> */}
                 </ul>
               </div>
             </div>
@@ -150,19 +141,22 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className={`${styles.policy} `}>
+            {/* <div className={`${styles.policy} `}>
               <ul>
                 <li>
-                  <a href="#">Privacy Policy</a>
+                  <Link> Privacy Policy</Link>
+                  <a href="#"></a>
                 </li>
                 <li>
+                <Link> Privacy Policy</Link>
+
                   <a href="#">Cookie Policy</a>
                 </li>
                 <li>
                   <a href="#">Terms of use</a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
