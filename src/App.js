@@ -11,11 +11,11 @@ import Home from "./pages/Hero";
 import Blogs from "./pages/Blog";
 import Blogsingle from "./pages/Blogs-single";
 import Authorspage from "./pages/Authorspage";
+import Catogories from "./pages/Blogcategory";
 
 // layouts
 import Homelayout from "./components/layout/Homelayout";
 import NotFound from "./pages/Notfound";
-import Catogories from "./pages/Blogcategory";
 
 function App() {
   const router = createBrowserRouter(
