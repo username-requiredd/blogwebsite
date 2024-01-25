@@ -1,0 +1,22 @@
+.nav_toggler {
+  border: none;
+}
+
+.nav_list {
+  list-style-type: none;
+  color: var(--Secondary-600, #3b3c4a);
+
+  /* Body/b4/Regular */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+.search_container {
+  border-radius: 5px;
+  background: var(--Secondary-100, #f4f4f5);
+}
+
+.search_placeholder {
+  background: var(--Secondary-100, #f4f4f5);
+}

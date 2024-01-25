@@ -1,0 +1,116 @@
+.authors_container {
+  display: flex;
+  width: 1216px;
+  padding: 48px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background: var(--Secondary-50, #f6f6f7);
+}
+
+.authors_name {
+  color: var(--Secondary-800, #181a2a);
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 140% */
+}
+
+.authors_tag {
+  color: var(--Secondary-500, #696a75);
+
+  /* Body/b5/Regular */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+
+.date_posted {
+  color: var(--Secondary-500, #696a75);
+
+  /* Body/b5/Regular */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+
+.bio {
+  color: var(--Secondary-600, #3b3c4a);
+  text-align: center;
+
+  /* Body/b3/Regular */
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 144.444% */
+  align-self: stretch;
+}
+
+.socials {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+}
+.socials span {
+  border-radius: 6px;
+  background: var(--Secondary-500, #696a75);
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .authors_container {
+    width: 100%; /* Make the container full width on tablets */
+    padding: 32px; /* Adjust padding for tablets */
+  }
+}
+
+/* Media query for screens up to 576px (phones) */
+@media (max-width: 576px) {
+  .authors_container {
+    width: 100%; /* Make the container full width on phones */
+    padding: 16px; /* Adjust padding for phones */
+  }
+
+  .author img {
+    width: 48px; /* Adjust image size for phones */
+    height: 48px;
+    border-radius: 60px;
+  }
+
+  .authors_name {
+    font-size: 18px; /* Adjust font size for phones */
+    line-height: 26px; /* Adjust line height for phones */
+  }
+
+  .date_posted {
+    font-size: 12px; /* Adjust font size for phones */
+    line-height: 18px; /* Adjust line height for phones */
+  }
+
+  .bio {
+    font-size: 16px; /* Adjust font size for phones */
+    line-height: 24px; /* Adjust line height for phones */
+  }
+
+  .socials {
+    padding: 4px; /* Adjust padding for phones */
+    gap: 4px; /* Adjust gap for phones */
+  }
+
+  .socials span {
+    padding: 4px; /* Adjust padding for phones */
+    font-size: 12px; /* Adjust font size for phones */
+  }
+}

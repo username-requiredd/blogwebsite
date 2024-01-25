@@ -1,0 +1,112 @@
+a {
+  text-decoration: none;
+}
+.blog_heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  align-self: stretch;
+  color: var(--Secondary-800, #181a2a);
+
+  /* Heading/h1/Semibold */
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px; /* 111.111% */
+}
+.blog {
+  display: flex;
+  width: 1216px;
+  padding: 16px 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: var(--White, #fff);
+}
+
+.title {
+  color: var(--Secondary-800, #181a2a);
+  text-align: center;
+
+  /* Heading/h2/Semibold */
+  font-family: "Work Sans";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px; /* 120% */
+}
+
+.bread_crumbs {
+  color: var(--Secondary-600, #3b3c4a);
+  text-align: center;
+
+  /* Body/b4/Regular */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+.home_pic {
+  display: flex;
+  width: 1216px;
+  height: 450px;
+  padding: 40px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background: linear-gradient(
+      0deg,
+      rgba(20, 22, 36, 0.4) 0%,
+      rgba(20, 22, 36, 0.4) 100%
+    ),
+    url("../images/homepic.png"), lightgray 50% / cover no-repeat;
+}
+
+.blog_title {
+  color: var(--White, #fff);
+
+  /* Heading/h1/Semibold */
+  font-family: "Work Sans";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px; /* 111.111% */
+}
+
+.blog_title img {
+  width: 36px;
+  height: 36px;
+  border-radius: 20px;
+}
+.authors_name,
+.date_posted {
+  color: var(--Secondary-500, #696a75);
+
+  /* Body/b5/Medium */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+}
+
+.badge {
+  display: flex;
+  padding: 4px 10px;
+  justify-content: start;
+  align-items: center;
+  gap: 4px;
+  border-radius: 6px;
+  background: var(--Theme-1-Primary, #4b6bfb);
+  color: var(--White, #fff);
+  width: fit-content;
+  /* Body/b5/Medium */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+}
