@@ -60,7 +60,7 @@ const Home = () => {
         </div>
         <Latestpost blogs={homePageBlogs} title="Latest Posts" />
         <div className={`${styles.more_blogs}`}>
-          <Link to={"../blog"} onClick={scrollToTop}>
+          <Link to={"/blogs"} onClick={scrollToTop}>
             <button className="btn">View All Posts</button>
           </Link>
         </div>
