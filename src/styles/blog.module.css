@@ -150,3 +150,25 @@ a {
     line-height: 16px; /* Adjust line height for phones */
   }
 }
+
+.search_container {
+  border-radius: 5px;
+  background: var(--Secondary-100, #f4f4f5);
+  width: 400px;
+}
+.search_container input {
+  /* margin: auto; */
+  margin-left: 12px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 80%;
+}
+.search_placeholder {
+  background: var(--Secondary-100, #f4f4f5);
+}
+
+@media (max-width: 576px) {
+  .search_container {
+    width: 90%;
+  }
+}

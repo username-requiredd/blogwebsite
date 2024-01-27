@@ -3,7 +3,10 @@ import author from "../images/author.png";
 import Latestpost from "../components/Latestpost";
 import facebook from "../images/logo-facebook (2).svg";
 import data from "../data/blogs.json";
+import searchIcon from "../images/search.svg";
+
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 const Authorspage = () => {
   const { id } = useParams();
@@ -29,7 +32,24 @@ const Authorspage = () => {
   ];
   const abt = bio.filter((auth) => auth.name === author);
   const authorBio = abt[0].about;
-  console.log(abt, author, abt[0].about);
+  const [search, setSearch] = useState("");
+
+  const handleInputChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const results = search
+    ? authorsBlog.filter((blog) =>
+        blog.title.toLowerCase().includes(search.toLowerCase())
+      )
+    : authorsBlog;
+
+  // setSearch(results);
+
   return (
     <>
       <div className="container mt-4 mb-5">
@@ -70,8 +90,8 @@ const Authorspage = () => {
                 fill="none"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M15 8.04242C15 4.17679 11.8656 1.04242 8 1.04242C4.13438 1.04242 1 4.17679 1 8.04242C1 11.5362 3.55938 14.4321 6.90625 14.9577V10.0665H5.12844V8.04242H6.90625V6.50023C6.90625 4.74617 7.95156 3.77648 9.55031 3.77648C10.3162 3.77648 11.1175 3.91336 11.1175 3.91336V5.63617H10.2344C9.36531 5.63617 9.09344 6.17554 9.09344 6.72992V8.04242H11.0347L10.7247 10.0665H9.09375V14.9584C12.4406 14.433 15 11.5371 15 8.04242Z"
                   fill="white"
                 />
@@ -130,7 +150,29 @@ const Authorspage = () => {
           </div>
         </div>
       </div>
-      <Latestpost blogs={authorsBlog} title="Posts" />
+      <form className="d-flex mt-3 mb-3 mx-auto" onSubmit={handleSubmit}>
+        <div className={`input-group p-2 mx-auto ${styles.search_container}`}>
+          <input
+            className={`${styles.search_placeholder}form-control border-0 px-2`}
+            type="search"
+            // value={search}
+            onChange={handleInputChange}
+            placeholder=" Search..."
+            aria-label="Search"
+          />
+          <span className="input-group-text bg-white border border-1 border-white">
+            <img src={searchIcon} alt="" className="" />
+          </span>
+        </div>
+      </form>
+
+      <Latestpost
+        blogs={results}
+        title={search ? "Search results" : ` Posts`}
+      />
+      {results.length === 0 && (
+        <div className="text-center mb-5 ">No results found</div>
+      )}
     </>
   );
 };

@@ -25,7 +25,7 @@ const Blogsingle = () => {
               <span>{category}</span>
             </div>
             {title}
-            <Link to={`../author/${id}`}>
+            <Link to={`/authors/${id}`}>
               <div
                 className={`${styles.author}  mb-2 d-flex align-items-center`}
               >

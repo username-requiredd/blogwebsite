@@ -17,7 +17,7 @@ const Latestpost = ({ blogs: data, title }) => {
             {data.map(
               ({ image, category, title, author, date, authorimg, id }) => (
                 <div className="col-sm-8 mb-4 col-lg-4 mx-auto" key={id}>
-                  <Link to={`../blogsingle/${id}`} onClick={scrollToTop}>
+                  <Link to={`/blogs/${id}`} onClick={scrollToTop}>
                     <div className={`${styles.latest_blogs}`}>
                       <div className="img">
                         <img
@@ -35,10 +35,9 @@ const Latestpost = ({ blogs: data, title }) => {
                         <div className={`${styles.blog_category}`}>
                           {category}
                         </div>
-
                         <h4>{title}</h4>
                         <div className={`${styles.author}`}>
-                          <Link to={`../author/${id}`}>
+                          <Link to={`/authors/${id}`}>
                             <div className="author mt-4">
                               <img
                                 src={authorimg}

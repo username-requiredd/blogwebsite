@@ -27,6 +27,26 @@
   line-height: 28px; /* 155.556% */
 }
 
+.email {
+  color: var(--Secondary-800, #181a2a);
+
+  /* text-base/Semi Bold */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
+
+.email span {
+  color: var(--Secondary-600, #3b3c4a);
+
+  /* text-base/Regular */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
 .footer_heading p {
   color: var(--Secondary-500, #696a75);
 

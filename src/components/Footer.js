@@ -1,9 +1,26 @@
 import styles from "../styles/footer.module.css";
 import mail from "../images/mail.svg";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [val, setVal] = useState(false);
   const scrollToTop = () => {
     window.scrollTo(0, 0);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const validateEmail = () => {
+    if (email.includes("@") && email.length > 1) {
+      setVal("Successfully subscribed to newsletter!");
+    } else {
+      setVal("Enter a valid email!");
+    }
   };
 
   return (
@@ -26,6 +43,14 @@ const Footer = () => {
                   world where curiosity meets community
                 </p>
               </div>
+              <div className={`${styles.contact} mb-3`}>
+                <div className={`${styles.email} `}>
+                  Email: <span>@exampleemail.com</span>
+                </div>
+                <div className={`${styles.email} `}>
+                  Phone: <span>+2347061647972</span>
+                </div>
+              </div>
             </div>
             <div className="col-sm-6 col-lg-2  ">
               <div className={`${styles.quick_links} mb-3`}>Quick Links</div>
@@ -37,19 +62,10 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to={"../blog"} onClick={scrollToTop}>
+                    <Link to={"/blogs"} onClick={scrollToTop}>
                       Blogs
                     </Link>
                   </li>
-                  {/* <li>
-                    <a href="#">Archive</a>
-                  </li>
-                  <li>
-                    <a href="#">Author</a>
-                  </li>
-                  <li>
-                    <a href="#">blogs</a>
-                  </li> */}
                 </ul>
               </div>
             </div>
@@ -59,23 +75,36 @@ const Footer = () => {
                 <div className={`${styles.cat_lists}`}>
                   <ul>
                     <li>
-                      <Link to={"categories/Finance"} onClick={scrollToTop}>
+                      <Link to={"/categories/Finance"} onClick={scrollToTop}>
                         Finance
                       </Link>
                     </li>
                     <li>
-                      <Link to={"categories/Health"} onClick={scrollToTop}>
+                      <Link to={"/categories/Health"} onClick={scrollToTop}>
                         Health
                       </Link>
                     </li>
                     <li>
-                      <Link to={"categories/Fashion"} onClick={scrollToTop}>
+                      <Link to={"/categories/Fashion"} onClick={scrollToTop}>
                         Fashion
                       </Link>
                     </li>
                     <li>
-                      <Link to={"categories/Nature"} onClick={scrollToTop}>
+                      <Link to={"/categories/Nature"} onClick={scrollToTop}>
                         Nature
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to={"/categories/Technology"} onClick={scrollToTop}>
+                        Technology
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to={"/categories/Photography"}
+                        onClick={scrollToTop}
+                      >
+                        Photography
                       </Link>
                     </li>
                     <Link
@@ -97,17 +126,29 @@ const Footer = () => {
                   <p className="mt-2">
                     Get blogs articles and offers via E-mail
                   </p>
-                  <div
-                    className={`${styles.news_letter_input} p-3  d-flex align-items-center`}
-                  >
-                    <input type="text" placeholder="Your Email " />
-                    <span className="mail">
-                      <img src={mail} alt="" />
+                  <form onSubmit={handleSubmit}>
+                    <div
+                      className={`${styles.news_letter_input} p-3  d-flex align-items-center`}
+                    >
+                      <input
+                        type="text"
+                        placeholder="Your Email "
+                        onChange={handleChange}
+                        className="px-1"
+                      />
+                      <span className="mail">
+                        <img src={mail} alt="" />
+                      </span>
+                    </div>
+                    <span>
+                      <p className="text-danger">{val}</p>
                     </span>
-                  </div>
-                  <div className={styles.subscribe_btn}>
-                    <button className="btn">Subscribe</button>
-                  </div>
+                    <div className={styles.subscribe_btn}>
+                      <button className="btn" onClick={validateEmail}>
+                        Subscribe
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -148,20 +189,6 @@ const Footer = () => {
                   </span>
                 </div>
               </div>
-            </div>
-
-            <div className={`${styles.policy} `}>
-              <ul>
-                <li>
-                  <a href="#">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="#">Cookie Policy</a>
-                </li>
-                <li>
-                  <a href="#">Terms of use</a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
